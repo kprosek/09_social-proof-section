@@ -1,213 +1,258 @@
-@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
 
-* {
+:root {
+  --magenta-300: hsl(300, 43%, 22%);
+  --magenta-200: hsl(303, 10%, 53%);
+  --magenta-100: hsl(300, 24%, 96%);
+  --pink: hsl(333, 80%, 67%);
+  --white: hsl(0, 0%, 100%);
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-
-  --magenta-300: hsl(300, 43%, 22%);
-  --pink: hsl(333, 80%, 67%);
-  --magenta-200: hsl(303, 10%, 53%);
-  --magenta-100: hsl(300, 24%, 96%);
-  --white: hsl(0, 0%, 100%);
-
-  font-family: "League Spartan";
-  font-size: 1rem;
 }
 
 body {
-  background-color: var(--white);
-  background-image: url("images/bg-pattern-top-desktop.svg"),
-    url("images/bg-pattern-bottom-desktop.svg");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: 'League Spartan';
+  font-size: 1rem;
+
+  background-image: url(images/bg-pattern-top-mobile.svg),
+    url(images/bg-pattern-bottom-mobile.svg);
   background-repeat: no-repeat;
-  background-position: top left, bottom right;
+  background-position: top, bottom;
 }
 
 @media (min-width: 1200px) {
   body {
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    background-image: url(images/bg-pattern-top-desktop.svg),
+      url(images/bg-pattern-bottom-desktop.svg);
+
+    background-position: top left, bottom right;
+
+    padding: 3rem 8rem;
   }
 }
 
 /* HEADER */
 
 header {
-  max-width: 330px;
+  width: 95%;
+  max-width: 320px;
+  margin: 6rem auto 2rem auto;
+
   text-align: center;
-
-  margin: 5rem auto 1rem auto;
 }
 
-h1 {
-  width: 70%;
-  margin: 0 auto;
-  font-size: 2.5rem;
-  color: var(--magenta-300);
-  font-weight: 700;
-  letter-spacing: -0.15rem;
-  line-height: 2.5rem;
-}
-
-.paragraph-header {
-  color: var(--magenta-200);
-  font-size: 1.12rem;
-  margin: 1.5rem 0 2.5rem 0;
+.section-ratings {
+  width: 100%;
 }
 
 .container-ratings {
-  margin: 1rem auto;
-  padding: 1em;
-
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
   background-color: var(--magenta-100);
   border-radius: 10px;
 }
 
+.container-ratings:nth-child(1),
+.container-ratings:nth-child(2) {
+  margin-bottom: 1rem;
+}
+
+/* styles */
+
+h1 {
+  color: var(--magenta-300);
+  font-size: 2.5rem;
+  line-height: 2rem;
+}
+
+.paragraph-header {
+  color: var(--magenta-200);
+  font-weight: 500;
+  font-size: 1.05rem;
+  line-height: 1.5rem;
+  margin: 1.5rem 0 2.5rem 0;
+}
+
 .img-icon-star {
-  display: inline-block;
-  margin-bottom: 0.5rem;
+  margin-right: 0.2rem;
+}
+
+.img-icon-star:nth-child(5) {
+  margin-right: 0;
 }
 
 .paragraph-ratings {
-  font-weight: 700;
   color: var(--magenta-300);
+  font-weight: 700;
+  margin-top: 0.5rem;
 }
 
 @media (min-width: 1200px) {
   header {
-    max-width: 1110px;
-
     display: flex;
-    align-items: center;
     justify-content: space-between;
+
+    max-width: 1440px;
     text-align: left;
   }
 
-  .section-title {
-    width: 50%;
-  }
-
+  .section-title,
   .section-ratings {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-  }
-
-  h1 {
-    margin: 0;
-    font-size: 3.5rem;
-    line-height: 3.5rem;
-  }
-
-  .paragraph-header {
-    width: 80%;
-    margin: 1.5rem 0 2.5rem 0;
+    width: 40%;
   }
 
   .container-ratings {
     display: flex;
     align-items: center;
-    width: 420px;
-    margin: 0.5rem 0;
+    padding: 1.25rem;
   }
 
-  .ratings-one {
-    position: relative;
-    right: 5vw;
+  .container-ratings:nth-child(1),
+  .container-ratings:nth-child(2) {
+    margin-bottom: 1.5rem;
   }
 
-  .ratings-two {
+  .container-ratings:nth-child(1) {
     position: relative;
-    right: 2.5vw;
+    left: -7rem;
+  }
+
+  .container-ratings:nth-child(2) {
+    position: relative;
+    left: -3.5rem;
+  }
+
+  /* styles */
+
+  h1 {
+    color: var(--magenta-300);
+    font-size: 4rem;
+    line-height: 3rem;
+  }
+
+  .paragraph-header {
+    font-size: 1.2rem;
+    line-height: 1.75rem;
   }
 
   .rating {
-    margin: 0 2rem 0 1.5rem;
-  }
-
-  .img-icon-star {
-    display: inline-block;
-    margin-bottom: 0;
+    margin-left: 1rem;
   }
 
   .paragraph-ratings {
-    font-weight: 700;
-    color: var(--magenta-300);
+    font-size: 1.15rem;
+    margin-left: 2rem;
+    margin-top: 0;
   }
 }
 
 /* MAIN */
 
 main {
-  width: 90%;
-  max-width: 330px;
-  margin: 3rem auto 5rem auto;
+  width: 95%;
+  max-width: 320px;
+  margin-bottom: 4rem;
 }
 
 .container-card {
-  margin: 1em 0;
-  padding: 2.3em;
   background-color: var(--magenta-300);
   border-radius: 10px;
+  padding: 2rem;
+}
 
-  color: var(--white);
-  text-align: left;
+.container-card:nth-child(1),
+.container-card:nth-child(2) {
+  margin-bottom: 1rem;
 }
 
 .profile-info {
   display: flex;
-  margin-bottom: 1.5em;
+  margin-bottom: 1.75rem;
 }
 
 .profile-content {
-  margin-left: 1.5em;
+  margin-left: 1.5rem;
 }
+
+/* styles */
 
 .profile-info img {
   width: 15%;
   border-radius: 50%;
 }
 
-.paragraph-profile {
-  font-weight: 400;
+.paragraph-profile-info {
+  color: var(--white);
+  font-weight: 700;
 }
 
-.paragraph-regular-magenta {
+.paragraph-profile-sub {
   color: var(--pink);
-  opacity: 0.6;
+  font-weight: 500;
+  opacity: 0.7;
 }
 
-.paragraph-regular-white {
-  line-height: 1.4rem;
+.paragraph-card {
+  color: var(--white);
+  line-height: 1.5rem;
 }
 
 @media (min-width: 1200px) {
   main {
-    max-width: 1110px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 2rem;
 
-    display: flex;
-    justify-content: space-between;
+    margin-top: 5rem;
+    margin-bottom: 0;
+    max-width: 1440px;
   }
 
   .container-card {
-    max-width: 350px;
+    padding: 3rem 2rem 2rem;
   }
 
-  .card-one {
+  .container-card:nth-child(1),
+  .container-card:nth-child(2) {
+    margin-bottom: 0;
+  }
+
+  .container-card:nth-child(1) {
     position: relative;
-    top: -4vh;
+    top: -2rem;
   }
 
-  .card-two {
+  .container-card:nth-child(2) {
     position: relative;
-    top: -2vh;
+    top: -1rem;
   }
 
-  .paragraph-regular-white {
-    line-height: 1.4rem;
-    padding: 0.5rem 0 0.8rem 0;
+  .profile-info {
+    display: flex;
+    margin-bottom: 1.75rem;
+  }
+
+  .profile-content {
+    margin-left: 1.5rem;
+  }
+
+  /* styles */
+
+  .paragraph-profile-info,
+  .paragraph-profile-sub,
+  .paragraph-card {
+    font-size: 1.05rem;
   }
 }

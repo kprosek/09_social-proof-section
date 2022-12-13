@@ -193,7 +193,7 @@ main {
   border-radius: 50%;
 }
 
-.paragraph-profile-info {
+h2 {
   color: var(--white);
   font-weight: 700;
 }
@@ -250,7 +250,7 @@ main {
 
   /* styles */
 
-  .paragraph-profile-info,
+  h2,
   .paragraph-profile-sub,
   .paragraph-card {
     font-size: 1.05rem;
